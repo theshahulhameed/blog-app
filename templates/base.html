@@ -1,0 +1,16 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Shahul's Blog</title>
+    </head>
+    <body>  
+        <header>
+            <h1><a href="{% url 'home' %}">Journal</a></h1>
+        </header>
+        <div>
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </body>
+</html>
