@@ -1,0 +1,8 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+{% block content %}
+    <div class="post-preview">
+        <h2 class="post-title">{{ post.title }}</h2>
+        <p>{{ post.body }}</p>
+    </div>
+{% endblock content %}
