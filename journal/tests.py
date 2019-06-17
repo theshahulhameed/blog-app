@@ -31,11 +31,17 @@ class JournalTest(TestCase):
         self.user = get_user_model().objects.create_user(
             username='testuser', email='testemail@example.com',
             password='secret')
-        Post.objects.create(
+        self.post = Post.objects.create(
                             title='A test post', author=self.user,
                             body="It's just a sample post.")
 
-    def test_text_content(self):
+    def test_post_content(self):
+        """
+        Verifies whether the post's title, author and body are all as 
+        expected. 
+        """
         post = Post.objects.get(id=1)
         post_object_title = f'{post.title}'
         self.assertEqual(post_object_title, 'A test post')
+        self.assertEqual(f'{self.post.author}', 'testuser')
+        self.assertEqual(f'{self.post.body}', "It's just a sample post.")
