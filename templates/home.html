@@ -1,6 +1,7 @@
 <!-- templates/home.html -->
 {% extends 'base.html' %}
 {% block content %}
+<a href="{% url 'create_post' %}">Create New Post</a>
     {% for post in object_list %}
         <div class="post-preview">
             <h2 class="post-title"><a href="{% url 'post' post.pk %}">{{ post.title }}</a></h2>
