@@ -13,6 +13,9 @@ class BlogTests(TestCase):
                             title='A test post', author=self.user,
                             body="It's just a sample post.")
 
+    def test_get_absolute_url(self):
+        self.assertEqual(self.post.get_absolute_url(), '/post/1/')
+
     def test_post_content(self):
         """
         Verifies whether the post's title, author and body are all as
@@ -47,7 +50,3 @@ class BlogTests(TestCase):
         self.assertEqual(no_response.status_code, 404)
         self.assertContains(response, "A test post")
         self.assertTemplateUsed('post.html')
-
-
-
-
