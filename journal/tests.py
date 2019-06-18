@@ -76,4 +76,13 @@ class BlogTests(TestCase):
             'title': 'Updated title',
             'body': 'Updated body',
         })
+        self.assertEqual(response.status_code, 302)
+    
+    def test_post_delete_view(self):
+        """
+        Verifies whether the post delete view works as we expected
+        in terms of succesfully deleting a post and returning 
+        the expected status code.
+        """
+        response = self.client.get(reverse('post_delete', args='1'))
         self.assertEqual(response.status_code, 200)
