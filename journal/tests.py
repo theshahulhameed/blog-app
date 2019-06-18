@@ -50,3 +50,18 @@ class BlogTests(TestCase):
         self.assertEqual(no_response.status_code, 404)
         self.assertContains(response, "A test post")
         self.assertTemplateUsed('post.html')
+
+    def test_post_create_view(self):
+        """
+        Verifies whether the post creation view works
+        as we expected in terms of succesfully
+        creating a new post.
+        """
+        response = self.client.post(reverse('create_post'), {
+            'title': 'New title',
+            'body': 'Sample text',
+            'author': self.user,
+        })
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, 'New title')
+        self.assertContains(response, 'Sample text')
