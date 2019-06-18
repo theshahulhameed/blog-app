@@ -65,3 +65,15 @@ class BlogTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, 'New title')
         self.assertContains(response, 'Sample text')
+
+    def test_post_update_view(self):
+        """
+        Verifies whether the post update view works
+        as we expected in terms of succesfully modifying
+        a post and returning the expected status code.
+        """
+        response = self.client.post(reverse('post_edit', args='1'), {
+            'title': 'Updated title',
+            'body': 'Updated body',
+        })
+        self.assertEqual(response.status_code, 200)
