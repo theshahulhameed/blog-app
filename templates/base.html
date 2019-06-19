@@ -33,8 +33,10 @@
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
         <div class="site-heading">
+          <div class="text-center">
           <h1>Shahul Hameed's Blog</h1>
           <span class="subheading">A Journal</span>
+        </div>
         </div>
       </div>
     </div>
@@ -45,7 +47,11 @@
     <div class="row">
       <div class="col-lg-8 cgit ol-md-10 mx-auto">
           {% if user.is_authenticated %}
-          <p>Hi, <strong>{{ user.username }}!</strong></p>
+          <p>Hi, <strong>{{ user.username }}!</strong>
+            <div class="text-right">
+              <a href="{% url 'logout' %}">Log out</a>
+            </div>
+          </p>
           {% else %}
           <p> You are not logged in. </p>
           <a href="{% url 'login' %}"></a>
