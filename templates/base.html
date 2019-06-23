@@ -76,8 +76,10 @@
             </div>
           </p>
           {% else %}
-          <p> You are not logged in. </p>
-          <a href="{% url 'login' %}"></a>
+          <p> You are not logged in. 
+          <a href="{% url 'login' %}">Login</a> |
+          <a href="{% url 'signup' %}">Create account</a> 
+        </p>
           {% endif %}
     {% block content %}
     {% endblock content %}
