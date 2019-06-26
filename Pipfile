@@ -8,6 +8,7 @@ pep8 = "*"
 
 [packages]
 django = "*"
+gunicorn = "==19.9.0"
 
 [requires]
 python_version = "3.7"
