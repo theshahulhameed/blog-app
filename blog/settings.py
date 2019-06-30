@@ -36,10 +36,15 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    # 3rd-party-apps
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
+    # Custom Apps
     'journal.apps.JournalConfig',
     'accounts.apps.AccountsConfig',
+    'api.apps.ApiConfig',
+    # Again 3rd-party-apps
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
