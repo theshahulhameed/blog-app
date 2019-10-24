@@ -3,6 +3,8 @@ from django.urls import reverse
 
 
 class Post(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True, editable=False)
+    updated_at = models.DateTimeField(auto_now=True, editable=False)
     title = models.CharField(max_length=200)
     author = models.ForeignKey(
         'auth.User',
@@ -12,6 +14,6 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
-    
+
     def get_absolute_url(self):
         return reverse('post', args=[str(self.id)])
