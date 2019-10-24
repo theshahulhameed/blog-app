@@ -9,6 +9,7 @@ class Post(models.Model):
         on_delete=models.CASCADE
     )
     body = models.TextField()
+    is_active = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title
