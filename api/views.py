@@ -6,7 +6,7 @@ from journal.serializers import PostSerializer
 
 # Create your views here.
 class PostList(generics.ListAPIView):
-    queryset = Post.objects.all()
+    queryset = Post.objects.filter(is_active=True)
     serializer_class = PostSerializer
 
 
